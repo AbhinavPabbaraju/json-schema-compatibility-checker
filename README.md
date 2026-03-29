@@ -47,19 +47,21 @@ New Schema:
 ```
 
 ### Output:
-BREAKING: Required field `age` added
-
-## How to Run:
-
+```bash
+BREAKING: Required field 'age' added
 ```
-## Installation
 
+##  How to Run
+
+### Installation
 ```bash
 git clone https://github.com/yourusername/json-schema-compatibility-checker
 cd json-schema-compatibility-checker
 npm install
+```
 
-## Usage
+### Usage
+```bash
 npm run compare old.json new.json
 ```
 
