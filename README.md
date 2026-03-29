@@ -70,13 +70,6 @@ npm run compare old.json new.json
 - Node.js
 - JSON Schema Draft-07+
 
-## Architecture
-
-- Parser → Converts JSON Schema into AST
-- Comparator → Traverses and compares nodes
-- Rule Engine → Classifies changes
-- Reporter → Outputs results (CLI / JSON)
-
 ### GSoC Note:
 This repository is being developed as a proposal for GSoC 2026 under JSON Schema Org.
 
