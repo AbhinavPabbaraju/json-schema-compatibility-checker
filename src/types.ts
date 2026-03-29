@@ -52,3 +52,62 @@ export interface JsonSchema {
   if?: JsonSchema;
   then?: JsonSchema;
   else?: JsonSchema;
+
+  // Metadata
+  title?: string;
+  description?: string;
+  default?: unknown;
+  deprecated?: boolean;
+  readOnly?: boolean;
+  writeOnly?: boolean;
+  examples?: unknown[];
+ 
+  [key: string]: unknown;
+}
+ 
+export interface CompatibilityChange {
+  ruleId: string;
+  title: string;
+  level: CompatibilityLevel;
+  path: string;
+  message: string;
+  before?: unknown;
+  after?: unknown;
+  breaksBwd: boolean;
+  breaksFwd: boolean;
+}
+ 
+export interface CompatibilityReport {
+  timestamp: string;
+  summary: {
+    breaking: number;
+    warnings: number;
+    safe: number;
+    total: number;
+  };
+  compatible: boolean;
+  changes: CompatibilityChange[];
+  drafts: {
+    source: JsonSchemaDraft | "unknown";
+    target: JsonSchemaDraft | "unknown";
+  };
+}
+ 
+export interface CheckerOptions {
+  rootPath?: string;
+  resolveRefs?: boolean;
+  strict?: boolean;
+}
+ 
+export type RuleCheck = (
+  source: JsonSchema,
+  target: JsonSchema,
+  path: string,
+  context: RuleContext
+) => CompatibilityChange[];
+ 
+export interface RuleContext {
+  rootSource: JsonSchema;
+  rootTarget: JsonSchema;
+  defsCache: Map<string, JsonSchema>;
+}
