@@ -106,15 +106,15 @@ BREAKING: Enum value removed
 
 ## Data Flow
 Old Schema + New Schema
-↓
+->
 Parser
-↓
+->
 Comparator
-↓
+->
 Rule Engine
-↓
+->
 Reporter
-↓
+->
 CLI Output + JSON Report
 
 ---
@@ -141,9 +141,17 @@ SAFE: Optional field 'nickname' added
 ```
 
 ## Testing Strategy
-Unit tests for each rule
-Integration tests for full schema comparison
-Edge case testing:
-Missing fields
-Nested objects
-Complex compositions
+
+-Unit tests for each rule
+-Integration tests for full schema comparison
+-Edge case testing:
+  -Missing fields
+  -Nested objects
+  -Complex compositions
+
+## Challenges
+
+-Handling deeply nested schemas
+-Supporting multiple JSON Schema drafts
+-Resolving $ref dependencies
+-Ensuring performance for large schemas
