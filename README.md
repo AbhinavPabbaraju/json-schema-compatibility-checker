@@ -49,17 +49,57 @@ New Schema:
 ### Output:
 BREAKING: Required field `age` added
 
-### How to Run:
+## How to Run:
 
-  npm install
-  npm run compare old.json new.json
+```
+## Installation
+
+```bash
+git clone https://github.com/yourusername/json-schema-compatibility-checker
+cd json-schema-compatibility-checker
+npm install
+
+## Usage
+npm run compare old.json new.json
+```
 
 ### Tech Stack:
 - TypeScript
 - Node.js
 - JSON Schema Draft-07+
 
+## Architecture
+
+- Parser → Converts JSON Schema into AST
+- Comparator → Traverses and compares nodes
+- Rule Engine → Classifies changes
+- Reporter → Outputs results (CLI / JSON)
+
 ### GSoC Note:
 This repository is being developed as a proposal for GSoC 2026 under JSON Schema Org.
 
 The goal is to build a robust compatibility checker aligned with industry standards (Protobuf, Avro).
+
+## GSoC 2026 Proposal
+
+This project is being developed as part of a proposal for **Google Summer of Code 2026** under the JSON Schema organization.
+
+### Goals:
+- Build a robust schema diff engine
+- Align with industry standards (Protobuf, Avro)
+- Provide CI/CD integration
+
+### Deliverables:
+- CLI tool
+- JSON reporting system
+- Documentation + tests
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repo
+2. Create a new branch
+3. Submit a PR
+
+Please open an issue before major changes.
