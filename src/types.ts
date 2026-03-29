@@ -33,3 +33,22 @@ export interface JsonSchema {
   maxItems?: number;
   uniqueItems?: boolean;
   contains?: JsonSchema;
+
+  // Object
+  properties?: Record<string, JsonSchema>;
+  additionalProperties?: boolean | JsonSchema;
+  required?: string[];
+  minProperties?: number;
+  maxProperties?: number;
+  patternProperties?: Record<string, JsonSchema>;
+  propertyNames?: JsonSchema;
+  unevaluatedProperties?: boolean | JsonSchema;
+ 
+  // Composition
+  allOf?: JsonSchema[];
+  anyOf?: JsonSchema[];
+  oneOf?: JsonSchema[];
+  not?: JsonSchema;
+  if?: JsonSchema;
+  then?: JsonSchema;
+  else?: JsonSchema;
